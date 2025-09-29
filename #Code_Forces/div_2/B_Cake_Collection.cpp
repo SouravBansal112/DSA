@@ -4,11 +4,17 @@ using namespace std;
 typedef       long long     ll;
 
 void solve(){
-    int n; 
-    cin >> n; 
+    ll n,m; 
+    cin >> n>>m; 
     vector<int> v(n);
     for(int i=0; i<n; i++) cin >> v[i];
-    
+    sort(v.begin(),v.end(),greater<int>());
+    ll ans=0;
+    for(int i=0; i<n && m>0 ; i++){
+        ans+= (ll)v[i]*m;
+        m--;
+    }
+    cout<<ans<<endl;
 }
 
 int main(){

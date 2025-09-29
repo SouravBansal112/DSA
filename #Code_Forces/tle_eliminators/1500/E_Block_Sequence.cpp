@@ -7,8 +7,17 @@ void solve(){
     int n; 
     cin >> n; 
     vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
-    
+    for(int i=0; i<n; i++) cin>>v[i];
+    vector<int> dp(n+1,0);
+    int maxi=0;
+    for(int i=0; i<n; i++){
+        maxi=max(maxi,dp[i]);
+        if(v[i]+i+1<=n){
+            dp[v[i]+i+1]=max(dp[v[i]+i+1],maxi+v[i]+1);
+        }
+    }
+    maxi=max(maxi,dp[n]);
+    cout<<n-maxi<<endl;
 }
 
 int main(){

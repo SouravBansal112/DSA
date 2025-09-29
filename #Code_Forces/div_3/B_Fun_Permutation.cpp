@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-#define       MOD           1000000007
+#define       MOD           1000000007;
 typedef       long long     ll;
 
 void solve(){
@@ -8,7 +8,9 @@ void solve(){
     cin >> n; 
     vector<int> v(n);
     for(int i=0; i<n; i++) cin >> v[i];
-    
+    for(int i=0; i<n; i++){
+        cout<<n+1-v[i]<<" ";
+    }cout<<endl;
 }
 
 int main(){

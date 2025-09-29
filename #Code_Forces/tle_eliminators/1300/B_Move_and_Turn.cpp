@@ -5,17 +5,16 @@ typedef       long long     ll;
 
 void solve(){
     int n; 
-    cin >> n; 
-    vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
-    
+    cin >> n;
+    int ans=0;
+    if(n%2==0) ans=(n/2+1)*((n+1)/2+1);
+    else ans=2*(n/2+1)*((n+1)/2+1);
+    cout<<ans<<endl;
 }
 
 int main(){
   ios::sync_with_stdio(false);
   cin.tie(0);
-  int t;
-  cin>>t;
-  while(t--) solve();
+  solve();
   return 0;
 }

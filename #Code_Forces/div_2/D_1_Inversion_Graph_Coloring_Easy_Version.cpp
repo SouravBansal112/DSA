@@ -5,10 +5,9 @@ typedef       long long     ll;
 
 void solve(){
     int n; 
-    cin >> n; 
+    cin >> n;
     vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
-    
+    for(int i=0; i<n; i++) cin>>v[i];    
 }
 
 int main(){

@@ -4,10 +4,14 @@ using namespace std;
 typedef       long long     ll;
 
 void solve(){
-    int n; 
-    cin >> n; 
-    vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
+    int x,n; 
+    cin >> x>>n;
+    if(n%2==0) {
+        cout<<0<<endl;
+        return;
+    } 
+    cout<<x<<endl;
+    
     
 }
 

@@ -3,12 +3,24 @@ using namespace std;
 #define       MOD           1000000007
 typedef       long long     ll;
 
+int msb(ll x){
+    int msb=0;
+    while(x>0){
+        x/=2;
+        msb++;
+    }
+    return msb;
+}
+
 void solve(){
-    int n; 
+    ll n; 
     cin >> n; 
-    vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
-    
+    ll ans=0;
+    ll lim= msb(n);
+    for(ll i=0; i<=lim; i++){
+        ans+= (n)/(1ll<<i);
+    }
+    cout<<ans<<endl;
 }
 
 int main(){

@@ -1,0 +1,6 @@
+{   
+    "cph.general.compileAndRun": "g++ $fileName -o $fileNameWithoutExt && $fileNameWithoutExt && del $fileNameWithoutExt.exe",
+    "files.associations": {
+        "iostream": "cpp"
+    }
+}

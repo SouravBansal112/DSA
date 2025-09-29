@@ -6,16 +6,21 @@ typedef       long long     ll;
 void solve(){
     int n; 
     cin >> n; 
-    vector<int> v(n);
-    for(int i=0; i<n; i++) cin >> v[i];
-    
+    map<int,ll> m;
+    for(int i=1; i<=n; i++) {
+        ll x;
+        cin>>x;
+        m[x-i]+=x;
+    }
+    ll maxi=LLONG_MIN;
+    for(auto i:m) maxi=max(maxi,i.second);
+    cout<<maxi<<endl;
 }
 
 int main(){
   ios::sync_with_stdio(false);
   cin.tie(0);
-  int t;
-  cin>>t;
+  int t=1;
   while(t--) solve();
   return 0;
 }
