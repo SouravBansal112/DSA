@@ -10,27 +10,17 @@ typedef vector<ll> vl;
 
 void solve(){
     int n,x; 
-    cin >> n >> x; 
+    cin >> n>>x; 
     vector<int> v(n);
     for(int i=0; i<n; i++) cin>>v[i];
     sort(v.begin(),v.end());
-    vector<int> dp(x+1,INT_MAX);
-    dp[0]=0;
+    vector<int> dp(x+1,0);
+    dp[0]=1;
     for(int i=0; i<x; i++){
-        if(dp[i]<INT_MAX-1){
-            for(int j=0; j<n && i+v[j]<=x; j++){
-                dp[i+v[j]]=min(dp[i+v[j]],dp[i]+1);
-            }
+        for(int j=0; j<n && i+v[j]<=x; j++){
+            dp[i+v[j]]=(dp[i+v[j]]+dp[i])%MOD;
         }
-
-    }
-    if(dp[x]>=INT_MAX-1){
-        cout<<-1<<endl;
-        return;
-    }
-    else{
-        cout<<dp[x]<<endl;
-    }
+    }cout<<dp[x]<<endl;
 }
 
 int main(){
